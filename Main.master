@@ -1,0 +1,98 @@
+﻿<%@ Master Language="VB" CodeFile="Main.master.vb" Inherits="Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 195px;
+        }
+        .style2
+        {
+            height: 195px;
+            width: 228px;
+        }
+        .style3
+        {
+            width: 228px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <br />
+        <table style="width:100%;">
+            <tr>
+                <td colspan="3">
+                    <img alt="" height="96" src="Pictures/banner_big.jpg" width="844" /></td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+        <br />
+        <table style="width: 107%;" bgcolor="#FFE697" border="1">
+            <tr>
+                <td colspan="2">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
+                        Font-Size="0.8em" PathSeparator=" : ">
+                        <PathSeparatorStyle Font-Bold="True" ForeColor="#507CD1" />
+                        <CurrentNodeStyle ForeColor="#333333" />
+                        <NodeStyle Font-Bold="True" ForeColor="#284E98" />
+                        <RootNodeStyle Font-Bold="True" ForeColor="#507CD1" />
+                    </asp:SiteMapPath>
+                </td>
+            </tr>
+            <tr>
+                <td class="style2">
+                    <asp:TreeView ID="TreeView1" runat="server">
+                        <Nodes>
+                            <asp:TreeNode Text="Home" Value="Home">
+                                <asp:TreeNode NavigateUrl="~/Search.aspx" Text="Search Books" 
+                                    Value="Search Books"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Input.aspx" Text="Input New Books" 
+                                    Value="Input New Books"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Delete.aspx" Text="Delete Books" 
+                                    Value="Delete Books"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/BookingBooks.aspx" Text="Booking" Value="Booking">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Borrow" Value="Borrow"></asp:TreeNode>
+                                <asp:TreeNode Text="Amercement" Value="Amercement"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/Logout.aspx" Text="Logout" Value="Logout">
+                            </asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </td>
+                <td class="style1" valign="top">
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <br />
+                    <br />
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+        <br />
+    </div>
+    </form>
+</body>
+</html>
